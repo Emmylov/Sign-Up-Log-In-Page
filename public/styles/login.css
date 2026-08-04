@@ -1,0 +1,140 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: "Poppins", sans-serif;
+    background: #F4F7FC;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+.container{
+    width: 100%;
+    max-width: 420px;
+    padding: 20px;
+}
+form{
+    background: #fff;
+    padding: 35px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+h1{
+    text-align: center;
+    margin-bottom: 8px;
+    color: #222;
+}
+form p{
+    text-align: center;
+    color: #666;
+    margin-bottom: 25px;
+    font-size: 14px;
+}
+label{
+    display: block;
+    margin-bottom: 6px;
+    font-weight: 500;
+    color: #333;
+}
+input[type="email"], input[type="password"]{
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    margin-bottom: 5px;
+    outline: none;
+    transition: .3s;
+}
+input:focus{
+    border-color: #2563eb;
+    box-shadow: 0 0 5px;
+}
+.password-box{
+    position: relative;
+}
+.password-box input{
+    width: 100%;
+    padding: 12px 45px 12px 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    outline: none;
+    transition: 0.3s;
+}
+.password-box input:focus{
+    border-color: #2563eb;
+    box-shadow: 0 0 5px;
+}
+#togglePassword{
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 22px;
+    color: #666;
+    cursor: pointer;
+    transition: 0.3s;
+}
+#togglePassword:hover{
+    color: #2563eb;
+}
+small{
+    display: block;
+    color: #ef4444;
+    margin-bottom: 15px;
+    font-size: 12px;
+}
+.options{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 15px 0 20px;
+    font-size: 14px;
+}
+.options a{
+    text-decoration: none;
+    color: #2563eb;
+}
+.options a:hover{
+    text-decoration: underline;
+}
+button{
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    background: #2563eb;
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+}
+button:hover{
+    background: #1d4ed8;
+}
+.signup{
+    margin-top: 20px;
+    text-align: center;
+}
+.signup a{
+    color: #2563eb;
+    text-decoration: none;
+    font-weight: 600;
+}
+.signup a:hover{
+    text-decoration: underline;
+}
+
+@media(max-width: 480px){
+    form{
+        padding: 25px;
+    }
+    .options{
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+}
