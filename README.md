@@ -1,2 +1,1 @@
-# Sign-Up-Log-In-Page
-Our Capstone
+Polish UI: apply same split-card visuals to login page and add social svg icons; keep login form ids consistent
