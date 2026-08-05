@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "rewrites": [
+    { "source": "/", "destination": "/public/index.html" },
+    { "source": "/signup.html", "destination": "/public/signup.html" },
+    { "source": "/login.html", "destination": "/public/login.html" },
+    { "source": "/styles/:path*", "destination": "/public/styles/:path*" },
+    { "source": "/scripts/:path*", "destination": "/public/scripts/:path*" },
+    { "source": "/(.*)", "destination": "/public/$1" }
+  ],
+  "cleanUrls": true
+}
