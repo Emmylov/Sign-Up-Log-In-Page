@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Welcome — Sign Up / Log In</title>
   <link href="styles/login.css" rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/regular/style.css" />
 </head>
 <body>
   <div class="container">
@@ -15,18 +14,37 @@
           <h2>Welcome Back!</h2>
           <p class="left-sub">To keep connected with us please login with your personal info</p>
 
-          <a class="outline-btn" href="index.html">SIGN IN</a>
+          <!-- SIGN IN should lead to the dedicated login page -->
+          <a class="outline-btn" href="login.html">SIGN IN</a>
         </div>
       </div>
 
       <div class="right-panel">
         <div class="right-inner">
           <h1>Create Account</h1>
-          <div class="social-row">
-            <button class="social"><i class="ph-facebook-logo"></i></button>
-            <button class="social"><i class="ph-google-logo"></i></button>
-            <button class="social"><i class="ph-linkedin-logo"></i></button>
+          <div class="social-row" aria-hidden="false">
+            <button class="social" aria-label="Continue with Facebook">
+              <!-- Facebook SVG -->
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+                <path d="M22 12.07C22 6.48 17.52 2 11.93 2C6.34 2 2 6.48 2 12.07C2 17.1 5.66 21.17 10.44 21.95V14.89H7.9V12.07H10.44V9.85C10.44 7.35 11.93 6.01 14.1 6.01C15.02 6.01 16 6.19 16 6.19V8.66H15C14.02 8.66 13.56 9.32 13.56 10.02V12.07H15.87L15.44 14.89H13.56V21.95C18.34 21.17 22 17.1 22 12.07Z" fill="#1877F2"/>
+              </svg>
+            </button>
+
+            <button class="social" aria-label="Continue with Google">
+              <!-- Google G SVG -->
+              <svg width="18" height="18" viewBox="0 0 48 48" fill="none" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+                <path d="M44.5 20H24v8.5h11.9C34.7 32.1 30 36 24 36 15.8 36 9.5 29.7 9.5 21.5S15.8 7 24 7c4.3 0 8 1.6 10.9 4.2l6.8-6.8C36.4 1.9 30.6 0 24 0 10.7 0 0 10.7 0 24s10.7 24 24 24c13.2 0 23.9-9.6 23.9-24 0-1.6-.2-3.1-.4-4.5z" fill="#EA4335"/>
+              </svg>
+            </button>
+
+            <button class="social" aria-label="Continue with LinkedIn">
+              <!-- LinkedIn SVG -->
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.025-3.036-1.849-3.036-1.852 0-2.135 1.446-2.135 2.941v5.664H9.356V9h3.414v1.561h.049c.477-.9 1.637-1.849 3.369-1.849 3.602 0 4.268 2.37 4.268 5.451v6.289zM5.337 7.433c-1.144 0-2.069-.927-2.069-2.07 0-1.143.925-2.07 2.069-2.07 1.143 0 2.07.927 2.07 2.07 0 1.143-.927 2.07-2.07 2.07zM7.119 20.452H3.552V9h3.567v11.452z" fill="#0A66C2"/>
+              </svg>
+            </button>
           </div>
+
           <p class="lead small">or use your email for registration</p>
 
           <form id="signupForm" novalidate>
@@ -45,7 +63,7 @@
             <div class="field password-box">
               <label for="password">Password</label>
               <input id="password" class="input" type="password" placeholder="Password" />
-              <i id="togglePassword" class="ph ph-eye"></i>
+              <i id="togglePassword" class="ph ph-eye" aria-hidden="true"></i>
               <small id="passwordError"></small>
             </div>
 
