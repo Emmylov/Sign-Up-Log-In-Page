@@ -3,138 +3,111 @@
     padding: 0;
     box-sizing: border-box;
 }
+:root{
+  --bg:#f6f1f6;
+  --card:#ffffff;
+  --accent:#ff5a4d; /* warm orange-red accent */
+  --accent-2:#ff7b5a;
+  --muted:#6b7280;
+  --error:#ef4444;
+  --success:#10b981;
+  --shadow: 0 18px 40px rgba(16,24,40,0.08);
+  --radius:14px;
+}
 body{
-    font-family: "Poppins", sans-serif;
-    background: #F4F7FC;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
+  font-family: "Poppins", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  background: linear-gradient(180deg,#fbf7fb 0%, var(--bg) 100%);
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:32px;
+  color:#111827;
 }
 .container{
-    width: 100%;
-    max-width: 420px;
-    padding: 20px;
-}
-form{
-    background: #fff;
-    padding: 35px;
-    border-radius: 15px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-}
-h1{
-    text-align: center;
-    margin-bottom: 8px;
-    color: #222;
-}
-form p{
-    text-align: center;
-    color: #666;
-    margin-bottom: 25px;
-    font-size: 14px;
-}
-label{
-    display: block;
-    margin-bottom: 6px;
-    font-weight: 500;
-    color: #333;
-}
-input[type="email"], input[type="password"]{
-    width: 100%;
-    padding: 12px;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    margin-bottom: 5px;
-    outline: none;
-    transition: .3s;
-}
-input:focus{
-    border-color: #2563eb;
-    box-shadow: 0 0 5px;
-}
-.password-box{
-    position: relative;
-}
-.password-box input{
-    width: 100%;
-    padding: 12px 45px 12px 12px;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    outline: none;
-    transition: 0.3s;
-}
-.password-box input:focus{
-    border-color: #2563eb;
-    box-shadow: 0 0 5px;
-}
-#togglePassword{
-    position: absolute;
-    right: 15px;
-    top: 50%;
-    transform: translateY(-50%);
-    font-size: 22px;
-    color: #666;
-    cursor: pointer;
-    transition: 0.3s;
-}
-#togglePassword:hover{
-    color: #2563eb;
-}
-small{
-    display: block;
-    color: #ef4444;
-    margin-bottom: 15px;
-    font-size: 12px;
-}
-.options{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin: 15px 0 20px;
-    font-size: 14px;
-}
-.options a{
-    text-decoration: none;
-    color: #2563eb;
-}
-.options a:hover{
-    text-decoration: underline;
-}
-button{
-    width: 100%;
-    padding: 12px;
-    border: none;
-    border-radius: 8px;
-    background: #2563eb;
-    color: white;
-    font-size: 16px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: 0.3s;
-}
-button:hover{
-    background: #1d4ed8;
-}
-.signup{
-    margin-top: 20px;
-    text-align: center;
-}
-.signup a{
-    color: #2563eb;
-    text-decoration: none;
-    font-weight: 600;
-}
-.signup a:hover{
-    text-decoration: underline;
+  width:100%;
+  max-width:980px;
+  display:flex;
+  gap:32px;
+  align-items:center;
+  justify-content:center;
 }
 
-@media(max-width: 480px){
-    form{
-        padding: 25px;
-    }
-    .options{
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 10px;
-    }
+/* Split card */
+.card-split{
+  display:flex;
+  width:820px;
+  border-radius:var(--radius);
+  overflow:hidden;
+  box-shadow:var(--shadow);
+  background:var(--card);
+}
+.left-panel{
+  flex:1;
+  background:linear-gradient(180deg,var(--accent), var(--accent-2));
+  color:#fff;
+  padding:48px 36px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+.left-inner{ text-align:center; max-width:300px; }
+.left-inner h2{ font-size:28px; margin-bottom:8px; font-weight:800; }
+.left-sub{ color:rgba(255,255,255,0.9); margin-bottom:28px; }
+.outline-btn{
+  display:inline-block;
+  padding:10px 26px;
+  border-radius:22px;
+  border:2px solid rgba(255,255,255,0.9);
+  color:rgba(255,255,255,0.95);
+  text-decoration:none;
+  font-weight:700;
+}
+
+.right-panel{ flex:1; padding:36px 44px; background:var(--card); }
+.right-inner{ max-width:360px; margin:0 auto; }
+.right-inner h1{ font-size:22px; margin-bottom:6px; font-weight:800; color:#0f172a; }
+.social-row{ display:flex; gap:10px; margin:10px 0 6px; }
+.social{ width:36px; height:36px; border-radius:999px; border:1px solid #e6e9ef; background:#fff; display:inline-flex; align-items:center; justify-content:center; cursor:pointer }
+.lead.small{ color:var(--muted); font-size:13px; margin-bottom:14px; }
+
+/* Form controls */
+label{display:block;font-weight:600;color:#374151;margin-bottom:8px;font-size:13px}
+.input, input[type="text"], input[type="email"], input[type="password"]{
+  width:100%;
+  padding:12px 14px;
+  border-radius:10px;
+  border:1px solid #e6e9ef;
+  background:#f9fafb;
+  font-size:14px;
+  color:#0f172a;
+  outline:none;
+  transition:box-shadow .18s, border-color .18s, transform .18s;
+}
+.input:focus, input:focus{ border-color:var(--accent); box-shadow:0 6px 18px rgba(255,90,77,0.08); transform:translateY(-1px); }
+.field { margin-bottom:12px; position:relative; }
+.password-box .ph{ position:absolute; right:12px; top:50%; transform:translateY(-50%); font-size:18px; color:#7c8794; cursor:pointer; }
+small{ display:block; color:var(--error); font-size:12px; min-height:16px; margin-top:6px; }
+
+/* Button */
+button.primary{ width:100%; padding:12px; border-radius:10px; border:none; background:var(--accent); color:#fff; font-weight:700; font-size:15px; cursor:pointer; box-shadow:0 10px 24px rgba(255,90,77,0.12); transition:transform .12s, box-shadow .12s; }
+button.primary:hover{ transform:translateY(-2px); box-shadow:0 18px 40px rgba(255,90,77,0.14); }
+
+/* Strength meter styles */
+.strength-meter{ margin-top:6px; margin-bottom:10px; }
+.strength-bar{ width:100%; height:8px; background:#eef2f7; border-radius:6px; overflow:hidden; }
+.strength-bar > span{ display:block; height:100%; width:0%; border-radius:6px; transition:width .25s ease, background .25s ease; background:linear-gradient(90deg,#ef4444,#f97316); }
+.strength-text{ margin-top:6px; font-size:13px; color:#475569; min-height:18px; }
+.strength-0 span{ width:6%; background:linear-gradient(90deg,#ef4444,#fb923c) }
+.strength-1 span{ width:30%; background:linear-gradient(90deg,#fb923c,#f97316) }
+.strength-2 span{ width:55%; background:linear-gradient(90deg,#f59e0b,#10b981) }
+.strength-3 span{ width:85%; background:linear-gradient(90deg,#10b981,#06b6d4) }
+.strength-4 span{ width:100%; background:linear-gradient(90deg,#06b6d4,#06b6d4) }
+
+/* Responsive */
+@media (max-width:880px){
+  .container{ padding:8px; }
+  .card-split{ flex-direction:column; width:100%; }
+  .left-panel, .right-panel{ padding:28px; }
+  .left-inner{ max-width:100%; }
 }
